@@ -5,7 +5,8 @@
 
 #include "minilibx-linux/mlx.h"
 #include "libft/libft.h"
-
+# include <math.h>
+# include <pthread.h>
 typedef struct s_fractal
 {
 	void	*mlx;
@@ -50,6 +51,7 @@ void	init_fractol(t_fractal *fractal);
 void	init_mlx(t_fractal *fractal);
 void	zoom(t_fractal *fractal, int x, int y, int zoom);
 
+int	exit_fractal(t_fractal *fractal);
 int		mouse_hook(int code, int x, int y, t_fractal *fractal);
 int		key_hook(int code, t_fractal *fractal);
 
