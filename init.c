@@ -6,11 +6,11 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 16:26:05 by habouda           #+#    #+#             */
-/*   Updated: 2024/09/04 16:40:19 by habouda          ###   ########.fr       */
+/*   Updated: 2024/09/04 17:23:33 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"s
+#include "fractol.h"
 
 void	init_fractol(t_fractal *fractal)
 {
@@ -29,5 +29,5 @@ void	init_mlx(t_fractal *fractal)
 	fractal->window = mlx_new_window(fractal->mlx, 700, 700, "42 fractol");
 	fractal->image = mlx_new_image(fractal->mlx, 700, 700);
 	fractal->pointer_to_image = mlx_get_data_addr(fractal->image, 
-				fractal->bits_per_pixel, fractal->size_line, fractal->endian);
+				&fractal->bits_per_pixel, &fractal->size_line, &fractal->endian);
 }

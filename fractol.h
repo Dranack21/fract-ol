@@ -50,7 +50,7 @@ void	init_fractol(t_fractal *fractal);
 void	init_mlx(t_fractal *fractal);
 void	zoom(t_fractal *fractal, int x, int y, int zoom);
 
-int	mouse_hook(int code, t_fractal *fractal);
-int	key_hook(int code, t_fractal *fractal);
+int		mouse_hook(int code, int x, int y, t_fractal *fractal);
+int		key_hook(int code, t_fractal *fractal);
 
 #endif
