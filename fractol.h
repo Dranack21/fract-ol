@@ -37,12 +37,10 @@ typedef struct s_fractal
 # define LEFT  			65361
 # define RIGHT 			65363
 # define DOWN  			65364
-# define R				8
-# define KEY_Q				113
 # define ESC  			65307
-
-
-
+# define R				27
+# define Q				113
+# define W				119
 
 void	init_fractol(t_fractal *fractal);
 void	init_mlx(t_fractal *fractal);
@@ -51,6 +49,7 @@ void	put_color_to_pixel(t_fractal *fractal, int x, int y, int color);
 void	calculate_julia(t_fractal *fractal);
 void	draw_julia(t_fractal *fractal);
 void	draw_fractal(t_fractal *fractal, char *argv);
+void	change_color(t_fractal *fractal);
 
 int		exit_fractal(t_fractal *fractal);
 int		mouse_hook(int code, int x, int y, t_fractal *fractal);

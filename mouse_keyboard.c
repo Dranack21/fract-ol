@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 16:51:02 by habouda           #+#    #+#             */
-/*   Updated: 2024/09/04 23:34:57 by habouda          ###   ########.fr       */
+/*   Updated: 2024/09/04 23:50:02 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ int	key_hook(int code, t_fractal *fractal)
 		fractal->offset_x = fractal->offset_x + 42 / fractal->zoom;
 	else if (code == LEFT)
 		fractal->offset_x = fractal->offset_x - 42 / fractal->zoom;
-	else if (code == R)
+	else if (code == W)
+		change_color(fractal);
+	else if (code == Q)
 		init_fractol(fractal);
 	draw_fractal(fractal, fractal->name);
 	return (0);

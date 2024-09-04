@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 15:07:39 by habouda           #+#    #+#             */
-/*   Updated: 2024/09/04 23:35:48 by habouda          ###   ########.fr       */
+/*   Updated: 2024/09/05 00:03:31 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	draw_fractal(t_fractal *fractal, char *argv)
 	{
 		if (!fractal->cx && !fractal->cy)
 		{
-			fractal->cx = 0.1;
-			fractal->cy = 0.785;
+			fractal->cx = -0.744 ;
+			fractal->cy = 0.148;
 		}
 	}
 	draw_julia(fractal);
