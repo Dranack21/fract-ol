@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 23:06:01 by habouda           #+#    #+#             */
-/*   Updated: 2024/09/05 00:01:40 by habouda          ###   ########.fr       */
+/*   Updated: 2024/09/05 00:16:21 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void	change_color(t_fractal *fractal)
 	}
 	else if (fractal->color == 0x8B0000)
 	{
-		fractal->color = 0xa4d991;
+		fractal->color = 0x0bf0fb;
 	}
-	else if (fractal->color == 0xa4d991)
+	else if (fractal->color == 0x0bf0fb)
 	{
 		fractal->color =0xFCBE11;
 	}

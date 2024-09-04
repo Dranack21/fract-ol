@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 16:26:05 by habouda           #+#    #+#             */
-/*   Updated: 2024/09/04 17:23:33 by habouda          ###   ########.fr       */
+/*   Updated: 2024/09/05 00:16:51 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	init_fractol(t_fractal *fractal)
 	fractal->zoom = 300;
 	fractal->offset_x = -1.21;
 	fractal->offset_y = -1.21;
-	fractal->max_iterations = 42;
+	fractal->max_iterations = 52;
 }
 
 void	init_mlx(t_fractal *fractal)
