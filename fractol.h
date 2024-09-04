@@ -1,7 +1,7 @@
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-#define SIZE 700;
+#define SIZE 700
 
 #include "minilibx-linux/mlx.h"
 #include "libft/libft.h"
@@ -30,28 +30,29 @@ typedef struct s_fractal
 	int		max_iterations;
 }		t_fractal;
 
+
 # define SCROLL_UP 4
 # define SCROLL_DOWN 5
+# define UP  			65362
+# define LEFT  			65361
+# define RIGHT 			65363
+# define DOWN  			65364
+# define R				8
+# define KEY_Q				113
+# define ESC  			65307
 
-# define ESC 53
-# define UP 126
-# define DOWN 125
-# define LEFT 123
-# define RIGHT 124
-# define R 15
-# define C 8
-# define H 4
-# define J 38
-# define P 35
-# define M 46
 
 
 
 void	init_fractol(t_fractal *fractal);
 void	init_mlx(t_fractal *fractal);
 void	zoom(t_fractal *fractal, int x, int y, int zoom);
+void	put_color_to_pixel(t_fractal *fractal, int x, int y, int color);
+void	calculate_julia(t_fractal *fractal);
+void	draw_julia(t_fractal *fractal);
+void	draw_fractal(t_fractal *fractal, char *argv);
 
-int	exit_fractal(t_fractal *fractal);
+int		exit_fractal(t_fractal *fractal);
 int		mouse_hook(int code, int x, int y, t_fractal *fractal);
 int		key_hook(int code, t_fractal *fractal);
 
