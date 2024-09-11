@@ -50,6 +50,10 @@ void	calculate_julia(t_fractal *fractal);
 void	draw_julia(t_fractal *fractal);
 void	draw_fractal(t_fractal *fractal, char *argv);
 void	change_color(t_fractal *fractal);
+void	calculate_mandle(t_fractal *fractal);
+void	draw_mandle(t_fractal *fractal);
+void	draw_ship(t_fractal *fractal);
+void	calculate_ship(t_fractal *fractal);
 
 int		exit_fractal(t_fractal *fractal);
 int		mouse_hook(int code, int x, int y, t_fractal *fractal);
