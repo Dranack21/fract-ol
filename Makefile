@@ -11,6 +11,7 @@ SRCS	=	fractol.c \
 			utils.c \
 			julia.c \
 			mandle.c \
+			parsing.c \
 
 SRCS_B  = 	bonus/fractol_bonus.c \
 			bonus/init_bonus.c \

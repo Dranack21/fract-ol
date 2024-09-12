@@ -58,5 +58,6 @@ void	calculate_ship(t_fractal *fractal);
 int		exit_fractal(t_fractal *fractal);
 int		mouse_hook(int code, int x, int y, t_fractal *fractal);
 int		key_hook(int code, t_fractal *fractal);
+int		parsing(int argc, char **argv);
 
 #endif
