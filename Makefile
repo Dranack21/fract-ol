@@ -1,5 +1,6 @@
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror -g -Iminilibx-linux -Lminilibx-linux -lmlx -lXext -lX11 -lm
+CFLAGS	= -Wall -Wextra -Werror -g -Iminilibx-linux
+LDFLAGS	= -Lminilibx-linux -lmlx -lXext -lX11 -lm
 NAME 	= fractol
 
 ### SRC ########################################################################
@@ -25,31 +26,32 @@ LIBFT = $(LIBFT_DIR)/libft.a
 
 MLX_DIR = ./minilibx-linux
 MLX_GIT = https://github.com/42Paris/minilibx-linux.git
+MLX = $(MLX_DIR)/libmlx.a
 
 ### RULES ###########################################################################
 
-all: $(LIBFT) $(MLX_DIR)/libmlx.a $(NAME)
+all : $(MLX) $(NAME)
 
-$(MLX_DIR)/libmlx.a:
-	git clone $(MLX_GIT) $(MLX_DIR) || true
-	make -C $(MLX_DIR)
+$(NAME): $(OBJS) $(LIBFT) $(MLX)
+	@$(CC) $(OBJS) $(LIBFT) $(MLX) $(LDFLAGS) -o $(NAME)
 
 $(LIBFT):
-	make -C $(LIBFT_DIR)
+	@$(MAKE) -C $(LIBFT_DIR)
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+$(MLX):
+	@if [ ! -d $(MLX_DIR) ]; then git clone $(MLX_GIT) $(MLX_DIR); fi
+	@$(MAKE) -C $(MLX_DIR)
 
 clean:
-	make -C $(LIBFT_DIR) clean
-	make -C $(MLX_DIR) clean
-	rm -f $(OBJS)
+	rm -rf $(OBJS)
+	@$(MAKE) -C $(LIBFT_DIR) clean
+	@$(MAKE) -C $(MLX_DIR) clean
 
-fclean: clean
-	make -C $(LIBFT_DIR) fclean
-	rm -rf $(MLX_DIR)
+fclean : clean
 	rm -f $(NAME)
+	rm -rf $(MLX_DIR)
+	@$(MAKE) -C $(LIBFT_DIR) fclean
 
-re: fclean all
+re : fclean all
 
-.PHONY: all clean fclean re
+.PHONY : all re fclean clean
