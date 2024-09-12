@@ -1,17 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: habouda <marvin@42.fr>                     +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/28 01:37:02 by Habouda           #+#    #+#              #
-#    Updated: 2024/09/05 22:08:04 by habouda          ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-### COMPIL #####################################################################
-
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror -g -Iminilibx-linux -Lminilibx-linux -lmlx -lXext -lX11 -lm
 NAME 	= fractol
@@ -35,33 +21,35 @@ OBJS	= $(SRCS:.c=.o)
 LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-### MINILIBX #######################################################################
+### MLX ###########################################################################
 
-MINILIBX_DIR = ./minilibx-linux
-MINILIBX = $(MINILIBX_DIR)/libmlx.a
+MLX_DIR = ./minilibx-linux
+MLX_GIT = https://github.com/42Paris/minilibx-linux.git
 
-### COMMANDS #######################################################################
+### RULES ###########################################################################
 
-all: $(LIBFT) $(MINILIBX) $(NAME)
+all: $(LIBFT) $(MLX_DIR)/libmlx.a $(NAME)
+
+$(MLX_DIR)/libmlx.a:
+	git clone $(MLX_GIT) $(MLX_DIR) || true
+	make -C $(MLX_DIR)
 
 $(LIBFT):
-	@$(MAKE) -C $(LIBFT_DIR)
+	make -C $(LIBFT_DIR)
 
-$(MINILIBX):
-	@$(MAKE) -C $(MINILIBX_DIR)
-
-$(NAME): $(OBJS) $(LIBFT) $(MINILIBX)
-	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
+	make -C $(LIBFT_DIR) clean
+	make -C $(MLX_DIR) clean
 	rm -f $(OBJS)
-	@$(MAKE) -C $(LIBFT_DIR) clean
 
 fclean: clean
+	make -C $(LIBFT_DIR) fclean
+	rm -rf $(MLX_DIR)
 	rm -f $(NAME)
-	@$(MAKE) -C $(LIBFT_DIR) fclean
 
 re: fclean all
 
-%.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@
+.PHONY: all clean fclean re
