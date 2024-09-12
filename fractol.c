@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 15:07:39 by habouda           #+#    #+#             */
-/*   Updated: 2024/09/12 23:12:00 by habouda          ###   ########.fr       */
+/*   Updated: 2024/09/12 23:18:50 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	main(int argc, char *argv[])
 		return (0);
 	fractal = malloc(sizeof(t_fractal));
 	init_fractol(fractal);
-	argc = argc + 0;
 	if (ft_strncmp(argv[1], "julia", 6) == 0)
 	{
 		fractal->name = "julia";
