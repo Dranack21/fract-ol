@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 15:07:39 by habouda           #+#    #+#             */
-/*   Updated: 2024/09/12 15:14:55 by habouda          ###   ########.fr       */
+/*   Updated: 2024/09/12 17:36:43 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ void	draw_fractal(t_fractal *fractal, char *argv)
 	}
 	else if (ft_strncmp(argv, "mandle", 7) == 0)
 		draw_mandle(fractal);
-	else if (ft_strncmp(argv, "ship", 5) == 0)
-		draw_ship(fractal);
+
 	mlx_put_image_to_window(fractal->mlx, fractal->window, fractal->image, 0,
 	0);
 }
@@ -36,10 +35,7 @@ int	main(int argc, char *argv[])
 {
 	t_fractal	*fractal;
 
-	if (argc != 2)
-		return (ft_putendl_fd("Use ./fractol with julia mandle or ship ", 2), 0);
-	if (ft_strncmp(argv[1], "mandle", 6) != 0 && ft_strncmp(argv[1], "julia", 5) != 0 && ft_strncmp(argv[1], "ship", 4) == 0)
-		return(ft_putendl_fd("Wrong arguments use mandle julia or ship", 2), 0);
+	argc = argc + 0;
 	fractal = malloc(sizeof(t_fractal));
 	init_fractol(fractal);
 	init_mlx(fractal);
