@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 15:07:39 by habouda           #+#    #+#             */
-/*   Updated: 2024/09/12 18:15:29 by habouda          ###   ########.fr       */
+/*   Updated: 2024/09/12 23:08:44 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	main(int argc, char *argv[])
 {
 	t_fractal	*fractal;
 
+	if (parsing(argc, argv) == 0)
+		return (0);
 	fractal = malloc(sizeof(t_fractal));
 	init_fractol(fractal);
 	argc = argc + 0;
