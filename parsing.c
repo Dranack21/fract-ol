@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 22:25:24 by habouda           #+#    #+#             */
-/*   Updated: 2024/09/12 23:04:25 by habouda          ###   ########.fr       */
+/*   Updated: 2024/09/12 23:06:06 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ int	parsing(int argc, char **argv)
 		}
 	}
 	write(2, "use julia orn mandle", 21);
-	return (0);
+	return (0);	
 }

@@ -20,6 +20,7 @@ SRCS_B  = 	bonus/fractol_bonus.c \
 			bonus/julia_bonus.c \
 			bonus/mandle_bonus.c \
 			bonus/burning-ship_bonus.c \
+			bonus/parsing_bonus.c \
 
 ### OBJS ###########################################################################
 
