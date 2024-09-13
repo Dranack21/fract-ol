@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   burning-ship.c                                     :+:      :+:    :+:   */
+/*   burning-ship_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 19:16:40 by habouda           #+#    #+#             */
-/*   Updated: 2024/09/11 15:32:15 by habouda          ###   ########.fr       */
+/*   Updated: 2024/09/13 04:02:53 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ void	calculate_ship(t_fractal *fractal)
 			+ fractal->cx;
 		fractal->zy = fabs(2.0 * fractal->zx * fractal->zy) + fractal->cy;
 		fractal->zx = fabs(x_temp);
-		if (fractal->zx * fractal->zx + fractal->zy
-			* fractal->zy >= 4.0)
+		if (fractal->zx * fractal->zx + fractal->zy * fractal->zy >= 4.0)
 			break ;
 	}
 	if (i == fractal->max_iterations)

@@ -1,12 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractol.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/13 04:00:37 by habouda           #+#    #+#             */
+/*   Updated: 2024/09/13 04:05:55 by habouda          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-#define SIZE 700
+# define SIZE 700
 
-#include "minilibx-linux/mlx.h"
-#include "libft/libft.h"
+# include "libft/libft.h"
+# include "minilibx-linux/mlx.h"
 # include <math.h>
 # include <pthread.h>
+
 typedef struct s_fractal
 {
 	void	*mlx;
@@ -28,36 +41,34 @@ typedef struct s_fractal
 	double	zoom;
 	char	*name;
 	int		max_iterations;
-}		t_fractal;
-
+}			t_fractal;
 
 # define SCROLL_UP 4
 # define SCROLL_DOWN 5
-# define UP  			65362
-# define LEFT  			65361
-# define RIGHT 			65363
-# define DOWN  			65364
-# define ESC  			65307
-# define R				27
-# define Q				113
-# define W				119
+# define UP 65362
+# define LEFT 65361
+# define RIGHT 65363
+# define DOWN 65364
+# define ESC 65307
+# define R 27
+# define Q 113
+# define W 119
 
-void	init_fractol(t_fractal *fractal);
-void	init_mlx(t_fractal *fractal);
-void	zoom(t_fractal *fractal, int x, int y, int zoom);
-void	put_color_to_pixel(t_fractal *fractal, int x, int y, int color);
-void	calculate_julia(t_fractal *fractal);
-void	draw_julia(t_fractal *fractal);
-void	draw_fractal(t_fractal *fractal, char *argv);
-void	change_color(t_fractal *fractal);
-void	calculate_mandle(t_fractal *fractal);
-void	draw_mandle(t_fractal *fractal);
-void	draw_ship(t_fractal *fractal);
-void	calculate_ship(t_fractal *fractal);
+void		init_fractol(t_fractal *fractal);
+void		init_mlx(t_fractal *fractal);
+void		zoom(t_fractal *fractal, int x, int y, int zoom);
+void		put_color_to_pixel(t_fractal *fractal, int x, int y, int color);
+void		calculate_julia(t_fractal *fractal);
+void		draw_julia(t_fractal *fractal);
+void		draw_fractal(t_fractal *fractal, char *argv);
+void		calculate_mandle(t_fractal *fractal);
+void		draw_mandle(t_fractal *fractal);
+void		draw_ship(t_fractal *fractal);
+void		calculate_ship(t_fractal *fractal);
 
-int		exit_fractal(t_fractal *fractal);
-int		mouse_hook(int code, int x, int y, t_fractal *fractal);
-int		key_hook(int code, t_fractal *fractal);
-int		parsing(int argc, char **argv);
+int			exit_fractal(t_fractal *fractal);
+int			mouse_hook(int code, int x, int y, t_fractal *fractal);
+int			key_hook(int code, t_fractal *fractal);
+int			parsing(int argc, char **argv);
 
 #endif

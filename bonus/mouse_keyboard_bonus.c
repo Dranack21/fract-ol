@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mouse_keyboard.c                                   :+:      :+:    :+:   */
+/*   mouse_keyboard_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 16:51:02 by habouda           #+#    #+#             */
-/*   Updated: 2024/09/04 23:50:02 by habouda          ###   ########.fr       */
+/*   Updated: 2024/09/13 04:10:35 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 int	key_hook(int code, t_fractal *fractal)
 {
 	if (code == ESC)
-		exit (0);
+		exit_fractal(fractal);
 	else if (code == UP)
 		fractal->offset_y = fractal->offset_y - 42 / fractal->zoom;
-	else if (code ==  DOWN)
+	else if (code == DOWN)
 		fractal->offset_y = fractal->offset_y + 42 / fractal->zoom;
 	else if (code == RIGHT)
 		fractal->offset_x = fractal->offset_x + 42 / fractal->zoom;

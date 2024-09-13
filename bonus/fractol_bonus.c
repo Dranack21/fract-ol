@@ -6,14 +6,14 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 15:07:39 by habouda           #+#    #+#             */
-/*   Updated: 2024/09/12 23:18:58 by habouda          ###   ########.fr       */
+/*   Updated: 2024/09/13 04:25:19 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
 void	draw_fractal(t_fractal *fractal, char *argv)
-{		
+{
 	if (ft_strncmp(argv, "julia", 6) == 0)
 	{
 		draw_julia(fractal);
@@ -23,7 +23,7 @@ void	draw_fractal(t_fractal *fractal, char *argv)
 	else if (strncmp(argv, "ship", 5) == 0)
 		draw_ship(fractal);
 	mlx_put_image_to_window(fractal->mlx, fractal->window, fractal->image, 0,
-	0);
+		0);
 }
 
 int	main(int argc, char *argv[])
@@ -37,8 +37,8 @@ int	main(int argc, char *argv[])
 	if (ft_strncmp(argv[1], "julia", 6) == 0)
 	{
 		fractal->name = "julia";
-		fractal->cx = atof(argv[2]);
-		fractal->cy = atof(argv[3]);
+		fractal->cx = ft_atof(argv[2]);
+		fractal->cy = ft_atof(argv[3]);
 	}
 	if (ft_strncmp(argv[1], "mandle", 7) == 0)
 		fractal->name = "mandle";

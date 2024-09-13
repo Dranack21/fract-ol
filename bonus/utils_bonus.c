@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 23:06:01 by habouda           #+#    #+#             */
-/*   Updated: 2024/09/05 22:00:40 by habouda          ###   ########.fr       */
+/*   Updated: 2024/09/13 04:02:30 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	put_color_to_pixel(t_fractal *fractal, int x, int y, int color)
 	buffer = fractal->pointer_to_image;
 	buffer[(y * fractal->size_line / 4) + x] = color;
 }
+
 void	change_color(t_fractal *fractal)
 {
 	if (fractal->color == 0xFCBE11)
@@ -31,7 +32,7 @@ void	change_color(t_fractal *fractal)
 	}
 	else if (fractal->color == 0x0bf0fb)
 	{
-		fractal->color =0xFCBE11;
+		fractal->color = 0xFCBE11;
 	}
 }
 

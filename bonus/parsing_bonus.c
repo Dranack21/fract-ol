@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 23:05:32 by habouda           #+#    #+#             */
-/*   Updated: 2024/09/12 23:17:33 by habouda          ###   ########.fr       */
+/*   Updated: 2024/09/13 04:15:19 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ int	parsing(int argc, char **argv)
 {
 	if (argc == 1)
 		return (write(2, "use julia ship or mandle\n", 26), 0);
-	if (ft_strncmp(argv[1], "mandle", 7) == 0 || ft_strncmp(argv[1], "ship", 5) == 0)
+	if (ft_strncmp(argv[1], "mandle", 7) == 0 || ft_strncmp(argv[1], "ship",
+			5) == 0)
 	{
 		if (argc != 2)
 			return (write(2, "Too manys arguments", 20), 0);
@@ -34,6 +35,6 @@ int	parsing(int argc, char **argv)
 			return (0);
 		}
 	}
-	write(2, "use julia or mandle", 21);
-	return (0);	
+	write(2, "use julia or mandle", 20);
+	return (0);
 }
