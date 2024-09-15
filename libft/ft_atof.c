@@ -6,59 +6,54 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 17:15:34 by habouda           #+#    #+#             */
-/*   Updated: 2024/09/12 17:17:58 by habouda          ###   ########.fr       */
+/*   Updated: 2024/09/13 04:46:40 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include "libft.h"
+static double	ft_atof_part(const char *str, int *i)
+{
+	double	result;
+	double	div;
 
-double	ft_atoi_part(const char *nptr, int *i)
+	result = 0.0;
+	div = 1.0;
+	while (str[*i] && ft_isdigit(str[*i]))
+	{
+		result = result * 10.0 + (str[*i] - '0');
+		(*i)++;
+	}
+	if (str[*i] == '.')
+	{
+		(*i)++;
+		while (str[*i] && ft_isdigit(str[*i]))
+		{
+			result = result * 10.0 + (str[*i] - '0');
+			div *= 10.0;
+			(*i)++;
+		}
+	}
+	return (result / div);
+}
+
+double	ft_atof(const char *str)
 {
 	double	result;
 	int		sign;
+	int		i;
 
 	result = 0.0;
 	sign = 1;
-	while (nptr[*i] == 32 || (nptr[*i] >= 9 && nptr[*i] <= 13))
-		(*i)++;
-	if ((nptr[*i] == '-' || nptr[*i] == '+') && nptr[*i])
-	{
-		if (nptr[*i] == '-')
-			sign = -sign;
-		(*i)++;
-	}
-	while (nptr[*i] && ft_isdigit(nptr[*i]))
-	{
-		result = result * 10.0 + (nptr[*i] - '0');
-		(*i)++;
-	}
-	return (sign * result);
-}
-
-double	ft_atof(const char *nptr)
-{
-	int		i;
-	double	result;
-	double	fraction;
-	int		divisor;
-
 	i = 0;
-	result = ft_atoi_part(nptr, &i);
-	fraction = 0.0;
-	divisor = 1;
-	if (nptr[i] == '.')
-	{
+	while (str[i] && (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13)))
 		i++;
-		while (nptr[i] && ft_isdigit(nptr[i]))
-		{
-			fraction = fraction * 10.0 + (nptr[i] - '0');
-			divisor *= 10;
-			i++;
-		}
-		result += fraction / divisor;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
 	}
-	return (result);
+	result = ft_atof_part(str, &i);
+	return (result * sign);
 }
-

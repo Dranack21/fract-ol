@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 23:06:01 by habouda           #+#    #+#             */
-/*   Updated: 2024/09/13 04:02:30 by habouda          ###   ########.fr       */
+/*   Updated: 2024/09/13 05:49:37 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@ void	put_color_to_pixel(t_fractal *fractal, int x, int y, int color)
 
 	buffer = fractal->pointer_to_image;
 	buffer[(y * fractal->size_line / 4) + x] = color;
+}
+
+void	put_pixel_to_image(t_fractal *fractal, int x, int y, int color)
+{
+	int	offset;
+
+	offset = (y * fractal->size_line) + (x * (fractal->bits_per_pixel / 8));
+	*(unsigned int *)(fractal->pointer_to_image + offset) = color;
 }
 
 void	change_color(t_fractal *fractal)

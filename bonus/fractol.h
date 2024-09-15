@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 04:00:39 by habouda           #+#    #+#             */
-/*   Updated: 2024/09/13 04:03:39 by habouda          ###   ########.fr       */
+/*   Updated: 2024/09/13 05:50:26 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ void		calculate_mandle(t_fractal *fractal);
 void		draw_mandle(t_fractal *fractal);
 void		draw_ship(t_fractal *fractal);
 void		calculate_ship(t_fractal *fractal);
+void		put_color_to_pixel(t_fractal *fractal, int x, int y, int color);
+void		put_pixel_to_image(t_fractal *fractal, int x, int y, int color);
 
 int			exit_fractal(t_fractal *fractal);
 int			mouse_hook(int code, int x, int y, t_fractal *fractal);

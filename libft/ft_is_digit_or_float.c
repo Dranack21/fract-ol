@@ -6,7 +6,7 @@
 /*   By: habouda <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 22:53:19 by habouda           #+#    #+#             */
-/*   Updated: 2024/09/12 22:56:19 by habouda          ###   ########.fr       */
+/*   Updated: 2024/09/13 04:34:52 by habouda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_is_digit_or_float(char *str)
 {
 	int	i;
-	int dot;
+	int	dot;
 
 	dot = 0;
 	i = 0;
